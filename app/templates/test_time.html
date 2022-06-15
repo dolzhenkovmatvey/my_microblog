@@ -1,0 +1,19 @@
+<h3>Local time:<span id="timestamp"></span></h3>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- the script for refresh current time -->
+<script>
+var update = function () {
+// using jQuery (really not a must):
+$("#timestamp").html(moment().format('MMMM Do YYYY, h:mm:ss a'));
+// or without jquery
+document.getElementById("timestamp").innerHTML = moment().format('MMMM Do YYYY, h:mm:ss a');
+};
+
+$(document).ready(function(){
+setInterval(update, 100);
+});
+</script>
